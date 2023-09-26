@@ -15,4 +15,152 @@ $light-gray: #c2cbe5;
 $white: #ffffff;
 
 body {
+  font-size: 18px;
+  color: $light-gray;
+  background: $dark-blue;
+  font-weight: 400;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  .bg-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(/assets/img/mobile/image-host.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    mix-blend-mode: multiply;
+  }
+
+  header,
+  main {
+    z-index: 1000;
+    opacity: 0.7993;
+    padding: 0 20px;
+  }
+
+  header {
+    // border: 1px solid white;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    // border: 1px solid white;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+      //   border: 1px solid white;
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 26px;
+      line-height: 38px; /* 146.154% */
+      text-transform: uppercase;
+
+      span {
+        color: $cyan;
+      }
+    }
+
+    .description {
+      //   border: 1px solid white;
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      p {
+        // border: 1px solid white;
+        width: 100%;
+        height: 40%;
+        padding: 0 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 15px;
+        line-height: 25px; /* 166.667% */
+      }
+
+      .podcasts {
+        // border: 1px solid white;
+        height: 20%;
+        display: flex;
+        padding: 0 5%;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          max-width: 77px;
+          max-height: 17px;
+        }
+      }
+    }
+
+    form {
+      //   border: 1px solid white;
+      height: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .input-container {
+        // border: 1px solid white;
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        input,
+        button {
+          border: none;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px; /* 200% */
+        }
+
+        input {
+          width: 100%;
+          max-width: 327px;
+          height: 46px;
+          padding: 9px 32px;
+          flex-shrink: 0;
+          border-radius: 28px;
+          background: $grayish-blue;
+        }
+
+        button {
+          width: 100%;
+          max-width: 327px;
+          height: 46px;
+          margin-top: 16px;
+          flex-shrink: 0;
+          border-radius: 28px;
+          background: $cyan;
+          color: $dark-blue;
+          transition: all 0.35s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+            background: $grayish-blue;
+            color: $cyan;
+          }
+        }
+      }
+    }
+  }
 }

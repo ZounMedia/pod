@@ -4,4 +4,131 @@
   box-sizing: border-box;
 }
 
+body {
+  font-size: 18px;
+  color: #c2cbe5;
+  background: #121725;
+  font-weight: 400;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.container .bg-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(/assets/img/mobile/image-host.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+}
+.container header,
+.container main {
+  z-index: 1000;
+  opacity: 0.7993;
+  padding: 0 20px;
+}
+.container header {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container main {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.container main .heading {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 26px;
+  line-height: 38px; /* 146.154% */
+  text-transform: uppercase;
+}
+.container main .heading span {
+  color: #54e6af;
+}
+.container main .description {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container main .description p {
+  width: 100%;
+  height: 40%;
+  padding: 0 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px; /* 166.667% */
+}
+.container main .description .podcasts {
+  height: 20%;
+  display: flex;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+.container main .description .podcasts img {
+  max-width: 77px;
+  max-height: 17px;
+}
+.container main form {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container main form .input-container {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container main form .input-container input,
+.container main form .input-container button {
+  border: none;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 200% */
+}
+.container main form .input-container input {
+  width: 100%;
+  max-width: 327px;
+  height: 46px;
+  padding: 9px 32px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  background: #2c344b;
+}
+.container main form .input-container button {
+  width: 100%;
+  max-width: 327px;
+  height: 46px;
+  margin-top: 16px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  background: #54e6af;
+  color: #121725;
+  transition: all 0.35s ease-in-out;
+}
+.container main form .input-container button:hover {
+  cursor: pointer;
+  background: #2c344b;
+  color: #54e6af;
+}
+
 /*# sourceMappingURL=styles.css.map */
