@@ -8,11 +8,16 @@
 
 //colors
 $cyan: #54e6af;
-$dark-blue: #121725;
+$dark-blue: #010308;
 $grayish-blue: #2c344b;
 $slate-blue: #5a668a;
 $light-gray: #c2cbe5;
 $white: #ffffff;
+
+//device breakpoints
+$tablet: 768px;
+$desktop: 1440px;
+$large-desktop: 1600px;
 
 body {
   font-size: 18px;
@@ -25,6 +30,10 @@ body {
   height: 100vh;
   width: 100vw;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $cyan;
 
   .bg-container {
     width: 100%;
@@ -34,25 +43,50 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     mix-blend-mode: multiply;
+    opacity: 0.7993;
+
+    @media (min-width: $tablet) {
+      background-image: url(/assets/img/tablet/image-host.jpg);
+      width: 491px;
+      height: 767px;
+      align-self: flex-end;
+      opacity: 1;
+    }
   }
 
   header,
   main {
     z-index: 1000;
-    opacity: 0.7993;
+    opacity: 0.8;
     padding: 0 20px;
+    max-width: 1440px;
+    background: $dark-blue;
   }
 
   header {
     // border: 1px solid white;
     height: 20%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: $tablet) {
+      width: calc(100% - 491px);
+      height: 60%;
+      align-items: flex-start;
+      align-self: flex-start;
+      background: $dark-blue;
+      opacity: 1;
+
+      img {
+        margin-top: 60px;
+      }
+    }
   }
 
   main {
-    // border: 1px solid white;
+    border: 1px solid white;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -67,6 +101,7 @@ body {
       font-size: 26px;
       line-height: 38px; /* 146.154% */
       text-transform: uppercase;
+      color: $white;
 
       span {
         color: $cyan;
@@ -162,5 +197,20 @@ body {
         }
       }
     }
+
+    @media (min-width: $tablet) {
+      position: absolute;
+      top: 258px;
+      align-self: flex-start;
+      justify-self: center;
+      width: 680px;
+      height: 509px;
+      background: $dark-blue;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    height: 767px;
   }
 }
