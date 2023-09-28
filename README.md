@@ -48,8 +48,8 @@ Using SASS really made it really easy to organize and maintain my styles.
 
 - https://fonts.google.com/specimen/Chivo - Google Fonts Chivo url
 - https://sass-lang.com/documentation/ - SASS documentation
-- HTML DOM element event listeners - https://www.w3schools.com/jsref/met_element_addeventlistener.asp
-- How to prevent a form from submitting after clicking a button - https://www.geeksforgeeks.org/how-to-prevent-buttons-from-submitting-forms-in-html/
+- https://www.w3schools.com/jsref/met_element_addeventlistener.asp - HTML DOM element event listeners
+- https://www.geeksforgeeks.org/how-to-prevent-buttons-from-submitting-forms-in-html/ - How to prevent a form from submitting after clicking a button
 
 ## Author
 
