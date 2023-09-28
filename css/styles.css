@@ -51,6 +51,20 @@ body {
     display: inherit;
   }
 }
+@media (min-width: 1440px) {
+  .container .bg-container {
+    width: 888px;
+    height: 640px;
+    right: 0;
+    top: 130px;
+  }
+  .container .bg-container img.tablet {
+    display: none;
+  }
+  .container .bg-container img.desktop {
+    display: inherit;
+  }
+}
 .container header,
 .container main {
   z-index: 1000;
@@ -75,6 +89,20 @@ body {
     align-self: flex-start;
     padding-left: 40px;
     opacity: 1;
+  }
+}
+@media (min-width: 1440px) {
+  .container header {
+    width: calc(100% - 888px);
+    height: 20%;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: flex-start;
+    opacity: 1;
+  }
+  .container header img {
+    margin-left: 165px;
+    margin-bottom: 10px;
   }
 }
 .container main {
@@ -245,21 +273,46 @@ body {
     bottom: 5px;
   }
 }
+@media (min-width: 1440px) {
+  .container main {
+    width: 723px;
+    margin-left: 165px;
+    top: 262px;
+  }
+  .container main .heading {
+    height: 25%;
+    font-size: 52px;
+    line-height: 62px;
+  }
+  .container main .description .podcasts {
+    align-items: center;
+  }
+}
 .container .bg-dots {
   width: 232px;
   height: 104px;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 30px;
   display: none;
+  z-index: 2000;
+}
+.container .bg-dots img {
+  width: 100%;
+  height: 100%;
 }
 @media (min-width: 768px) {
   .container .bg-dots {
     display: inherit;
   }
-  .container .bg-dots img {
-    width: 100%;
-    height: 100%;
+}
+@media (min-width: 1440px) {
+  .container {
+    max-height: 900px;
+  }
+  .container .bg-dots {
+    left: calc(100% - 232px);
+    bottom: 78px;
   }
 }
 
