@@ -23,8 +23,8 @@ An HTML CSS and Javascript interactive rating component.
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/responsive-landing-page-using-sass-and-flexbox-X_lo0_7RON
-- Live Site URL: https://equalizer-psi.vercel.app/
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-landing-page-using-html-and-sass-LSF__YoPKW
+- Live Site URL: https://pod-mq9z.vercel.app/
 - GitHub Repo: https://github.com/ZounMedia/pod
 
 ## My process
