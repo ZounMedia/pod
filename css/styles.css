@@ -9,6 +9,9 @@ body {
   color: #c2cbe5;
   background: #010308;
   font-weight: 400;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .container {
@@ -18,33 +21,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #54e6af;
+  background: #010308;
+  max-width: 1440px;
 }
 .container .bg-container {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url(/assets/img/mobile/image-host.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.7993;
+}
+.container .bg-container img {
+  width: 100%;
+  height: 100%;
+}
+.container .bg-container img.tablet,
+.container .bg-container img.desktop {
+  display: none;
 }
 @media (min-width: 768px) {
   .container .bg-container {
-    background-image: url(/assets/img/tablet/image-host.jpg);
     width: 491px;
     height: 767px;
-    align-self: flex-end;
-    opacity: 1;
+    right: 0;
+    top: 0;
+  }
+  .container .bg-container img.mobile {
+    display: none;
+  }
+  .container .bg-container img.tablet {
+    display: inherit;
   }
 }
 .container header,
 .container main {
   z-index: 1000;
-  opacity: 0.8;
+  opacity: 0.85;
+  background: #54e6af;
   padding: 0 20px;
-  max-width: 1440px;
   background: #010308;
 }
 .container header {
@@ -57,18 +69,15 @@ body {
 @media (min-width: 768px) {
   .container header {
     width: calc(100% - 491px);
-    height: 60%;
-    align-items: flex-start;
+    height: 15%;
+    align-items: center;
+    justify-content: flex-start;
     align-self: flex-start;
-    background: #010308;
+    padding-left: 40px;
     opacity: 1;
-  }
-  .container header img {
-    margin-top: 60px;
   }
 }
 .container main {
-  border: 1px solid white;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -88,7 +97,7 @@ body {
   color: #54e6af;
 }
 .container main .description {
-  height: 40%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -110,18 +119,19 @@ body {
   padding: 0 5%;
   align-items: center;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .container main .description .podcasts img {
   max-width: 77px;
   max-height: 17px;
 }
-.container main form {
+.container main .description form {
   height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container main form .input-container {
+.container main .description form .input-container {
   height: 80%;
   width: 100%;
   display: flex;
@@ -129,24 +139,29 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-.container main form .input-container input,
-.container main form .input-container button {
+.container main .description form .input-container input,
+.container main .description form .input-container button {
   border: none;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 200% */
 }
-.container main form .input-container input {
+.container main .description form .input-container input {
   width: 100%;
   max-width: 327px;
   height: 46px;
   padding: 9px 32px;
   flex-shrink: 0;
   border-radius: 28px;
+  color: #c2cbe5;
+  font-size: 18px;
   background: #2c344b;
 }
-.container main form .input-container button {
+.container main .description form .input-container input:active, .container main .description form .input-container input:focus {
+  outline: 1px solid #54e6af;
+}
+.container main .description form .input-container button {
   width: 100%;
   max-width: 327px;
   height: 46px;
@@ -157,26 +172,94 @@ body {
   color: #010308;
   transition: all 0.35s ease-in-out;
 }
-.container main form .input-container button:hover {
+.container main .description form .input-container button:hover {
   cursor: pointer;
-  background: #2c344b;
+  border: 1px solid #54e6af;
   color: #54e6af;
+  background: #2c344b;
 }
 @media (min-width: 768px) {
   .container main {
     position: absolute;
     top: 258px;
+    margin-left: 40px;
     align-self: flex-start;
     justify-self: center;
-    width: 680px;
+    justify-content: flex-end;
+    width: 635px;
     height: 509px;
     background: #010308;
     opacity: 1;
+    padding: 0;
+  }
+  .container main .heading {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 48px;
+    line-height: 56px; /* 146.154% */
+  }
+  .container main .description {
+    justify-content: space-between;
+    height: 60%;
+  }
+  .container main .description p {
+    width: 399px;
+    padding: 0;
+    font-size: 18px;
+    text-align: left;
+    line-height: 28px;
+  }
+  .container main .description .podcasts {
+    padding: 0;
+    width: 536px;
+    bottom: 0;
+    order: 3;
+  }
+  .container main .description .podcasts img {
+    max-width: 129px;
+    max-height: 29px;
+  }
+  .container main .description form {
+    position: relative;
+    height: 10%;
+    width: 427px;
+    height: 56px;
+  }
+  .container main .description form .input-container {
+    height: 100%;
+    flex-direction: row;
+  }
+  .container main .description form .input-container input {
+    max-width: 100%;
+    height: 56px;
+  }
+  .container main .description form .input-container button {
+    position: absolute;
+    width: 162px;
+    height: 46px;
+    right: 5px;
+    bottom: 5px;
   }
 }
+.container .bg-dots {
+  width: 232px;
+  height: 104px;
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  display: none;
+}
 @media (min-width: 768px) {
-  .container {
-    height: 767px;
+  .container .bg-dots {
+    display: inherit;
+  }
+  .container .bg-dots img {
+    width: 100%;
+    height: 100%;
   }
 }
 

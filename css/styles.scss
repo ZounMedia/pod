@@ -12,6 +12,7 @@ $dark-blue: #010308;
 $grayish-blue: #2c344b;
 $slate-blue: #5a668a;
 $light-gray: #c2cbe5;
+$cream: #fff;
 $white: #ffffff;
 
 //device breakpoints
@@ -24,6 +25,9 @@ body {
   color: $light-gray;
   background: $dark-blue;
   font-weight: 400;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .container {
@@ -33,38 +37,50 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: $cyan;
+  background: $dark-blue;
+  max-width: 1440px;
 
   .bg-container {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url(/assets/img/mobile/image-host.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    mix-blend-mode: multiply;
-    opacity: 0.7993;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    img.tablet,
+    img.desktop {
+      display: none;
+    }
 
     @media (min-width: $tablet) {
-      background-image: url(/assets/img/tablet/image-host.jpg);
       width: 491px;
       height: 767px;
-      align-self: flex-end;
-      opacity: 1;
+      right: 0;
+      top: 0;
+
+      img.mobile {
+        display: none;
+      }
+
+      img.tablet {
+        display: inherit;
+      }
     }
   }
 
   header,
   main {
     z-index: 1000;
-    opacity: 0.8;
+    opacity: 0.85;
+    background: #54e6af;
     padding: 0 20px;
-    max-width: 1440px;
     background: $dark-blue;
   }
 
   header {
-    // border: 1px solid white;
     height: 20%;
     width: 100%;
     display: flex;
@@ -73,26 +89,21 @@ body {
 
     @media (min-width: $tablet) {
       width: calc(100% - 491px);
-      height: 60%;
-      align-items: flex-start;
+      height: 15%;
+      align-items: center;
+      justify-content: flex-start;
       align-self: flex-start;
-      background: $dark-blue;
+      padding-left: 40px;
       opacity: 1;
-
-      img {
-        margin-top: 60px;
-      }
     }
   }
 
   main {
-    border: 1px solid white;
     height: 80%;
     display: flex;
     flex-direction: column;
 
     .heading {
-      //   border: 1px solid white;
       height: 20%;
       display: flex;
       flex-direction: column;
@@ -109,14 +120,12 @@ body {
     }
 
     .description {
-      //   border: 1px solid white;
-      height: 40%;
+      height: 70%;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
 
       p {
-        // border: 1px solid white;
         width: 100%;
         height: 40%;
         padding: 0 8%;
@@ -129,70 +138,76 @@ body {
       }
 
       .podcasts {
-        // border: 1px solid white;
         height: 20%;
         display: flex;
         padding: 0 5%;
         align-items: center;
         justify-content: space-between;
+        align-items: flex-end;
 
         img {
           max-width: 77px;
           max-height: 17px;
         }
       }
-    }
 
-    form {
-      //   border: 1px solid white;
-      height: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .input-container {
-        // border: 1px solid white;
-        height: 80%;
-        width: 100%;
+      form {
+        height: 40%;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
 
-        input,
-        button {
-          border: none;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 28px; /* 200% */
-        }
-
-        input {
+        .input-container {
+          height: 80%;
           width: 100%;
-          max-width: 327px;
-          height: 46px;
-          padding: 9px 32px;
-          flex-shrink: 0;
-          border-radius: 28px;
-          background: $grayish-blue;
-        }
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
 
-        button {
-          width: 100%;
-          max-width: 327px;
-          height: 46px;
-          margin-top: 16px;
-          flex-shrink: 0;
-          border-radius: 28px;
-          background: $cyan;
-          color: $dark-blue;
-          transition: all 0.35s ease-in-out;
+          input,
+          button {
+            border: none;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px; /* 200% */
+          }
 
-          &:hover {
-            cursor: pointer;
+          input {
+            width: 100%;
+            max-width: 327px;
+            height: 46px;
+            padding: 9px 32px;
+            flex-shrink: 0;
+            border-radius: 28px;
+            color: $light-gray;
+            font-size: 18px;
             background: $grayish-blue;
-            color: $cyan;
+
+            &:active,
+            &:focus {
+              outline: 1px solid $cyan;
+            }
+          }
+
+          button {
+            width: 100%;
+            max-width: 327px;
+            height: 46px;
+            margin-top: 16px;
+            flex-shrink: 0;
+            border-radius: 28px;
+            background: $cyan;
+            color: $dark-blue;
+            transition: all 0.35s ease-in-out;
+
+            &:hover {
+              cursor: pointer;
+              border: 1px solid $cyan;
+              color: $cyan;
+              background: $grayish-blue;
+            }
           }
         }
       }
@@ -201,16 +216,99 @@ body {
     @media (min-width: $tablet) {
       position: absolute;
       top: 258px;
+      margin-left: 40px;
       align-self: flex-start;
       justify-self: center;
-      width: 680px;
+      justify-content: flex-end;
+      width: 635px;
       height: 509px;
       background: $dark-blue;
       opacity: 1;
+      padding: 0;
+
+      .heading {
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        font-size: 48px;
+        line-height: 56px; /* 146.154% */
+      }
+
+      .description {
+        justify-content: space-between;
+
+        height: 60%;
+
+        p {
+          width: 399px;
+          padding: 0;
+          font-size: 18px;
+          text-align: left;
+          line-height: 28px;
+        }
+
+        .podcasts {
+          padding: 0;
+          width: 536px;
+          bottom: 0;
+          order: 3;
+
+          img {
+            max-width: 129px;
+            max-height: 29px;
+          }
+        }
+
+        form {
+          position: relative;
+          // border: 1px solid white;
+          height: 10%;
+          width: 427px;
+          height: 56px;
+
+          .input-container {
+            // border: 1px solid pink;
+            height: 100%;
+            flex-direction: row;
+
+            input {
+              max-width: 100%;
+              height: 56px;
+            }
+
+            button {
+              position: absolute;
+              width: 162px;
+              height: 46px;
+              right: 5px;
+              bottom: 5px;
+            }
+          }
+        }
+      }
     }
   }
 
+  .bg-dots {
+    //
+    width: 232px;
+    height: 104px;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    display: none;
+  }
+
   @media (min-width: $tablet) {
-    height: 767px;
+    .bg-dots {
+      display: inherit;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
